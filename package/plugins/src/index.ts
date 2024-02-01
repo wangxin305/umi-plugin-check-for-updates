@@ -12,12 +12,18 @@ export default (api: IApi) => {
         config: {
             schema(Joi) {
                 return Joi.object({
-                    content: Joi.array().default(['系统有更新！']),
-                    version: Joi.number().default(Date.now()),
-                    force: Joi.boolean().default(true),
-                    poll: Joi.number().default(1000 * 10 * 60)
+                    content: Joi.array(),
+                    version: Joi.number(),
+                    force: Joi.boolean(),
+                    poll: Joi.number()
                 });
             },
+            default: {
+                version: Date.now(),
+                force: true,
+                poll: 1000 * 10 * 60,
+                content:['系统有更新！']
+            }
         },
         enableBy({userConfig}) {
             return userConfig.checkForUpdates
@@ -29,8 +35,8 @@ export default (api: IApi) => {
             content: Mustache.render(tpl, {
                 dayjsPath: winPath(dirname(require.resolve('dayjs/package.json'))),
                 antdPath: winPath(dirname(require.resolve('antd/package.json'))),
-                version: api.userConfig.checkForUpdates.version,
-                poll: api.userConfig.checkForUpdates.poll
+                ...api.plugin.config.default,
+                ...api.userConfig.checkForUpdates,
             }),
             path: `runtime.tsx`,
         })

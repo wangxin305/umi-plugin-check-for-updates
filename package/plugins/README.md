@@ -14,14 +14,12 @@ Configure in `.umirc.ts`,
 
 ```js
 export default {
-  plugins: [
-    ['umi-plugin-check-for-updates'],
-  ],
+  plugins:['umi-plugin-check-for-updates'],
   checkForUpdates: {
     content: ['更新日志'], //更新日志
-    version: '',//版本
-    force: true, //更新弹窗
-    poll: 1000 * 10 * 60 //轮询时间
+    version: '',          //版本     default Date.now()
+    force: true,          //更新弹窗  default true
+    poll: 1000 * 10 * 60  //轮询时间
   }
 }
 ```

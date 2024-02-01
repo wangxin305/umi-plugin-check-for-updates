@@ -2,6 +2,7 @@ import dayjs from '{{{dayjsPath}}}';
 import {Modal, Typography} from '{{{antdPath}}}';
 
 const poll: number = {{poll}}
+const force: boolean = {{force}}
 const sys_version:number = {{version}}
 let intervalTimer: NodeJS.Timer;
 console.log(`version：%c${sys_version}`, 'color:#1677ff');
@@ -17,7 +18,7 @@ export async function checkUpdate() {
             return response.json();
         })
         .then((data) => {
-            const {version, content, force} = data;
+            const {version, content} = data;
             if (!!poll) {
                 if (sys_version !== version && force) {
                     Modal.destroyAll();
