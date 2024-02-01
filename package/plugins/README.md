@@ -5,7 +5,7 @@ A umi plugin
 ## Install
 
 ```bash
-pnpm i umi-plugin-update-notification
+pnpm i umi-plugin-check-for-updates
 ```
 
 ## Usage
@@ -15,8 +15,14 @@ Configure in `.umirc.ts`,
 ```js
 export default {
   plugins: [
-    ['umi-plugin-update-notification'],
+    ['umi-plugin-check-for-updates'],
   ],
+  checkForUpdates: {
+    content: ['更新日志'], //更新日志
+    version: '',//版本
+    force: true, //更新弹窗
+    poll: 1000 * 10 * 60 //轮询时间
+  }
 }
 ```
 

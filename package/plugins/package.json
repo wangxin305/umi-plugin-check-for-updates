@@ -26,5 +26,8 @@
   "dependencies": {
     "antd": "^5.13.3",
     "dayjs": "^1.11.10"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
