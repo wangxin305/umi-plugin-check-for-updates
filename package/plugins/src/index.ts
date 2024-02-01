@@ -27,6 +27,7 @@ export default (api: IApi) => {
         },
         enableBy({userConfig,env}) {
             // return userConfig.checkForUpdates
+            
             return env === 'production' && userConfig.checkForUpdates
         },
     })
