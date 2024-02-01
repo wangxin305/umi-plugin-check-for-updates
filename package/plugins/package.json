@@ -1,0 +1,30 @@
+{
+  "name": "umi-plugin-check-for-updates",
+  "author": "wangxin <408995858@qq.com>",
+  "version": "0.0.1",
+  "main": "dist/cjs/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "scripts": {
+    "dev": "father dev",
+    "build": "father build"
+  },
+  "keywords": [],
+  "authors": {
+    "name": "wangxin <408995858@qq.com>",
+    "email": "408995858@qq.com"
+  },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.11.13",
+    "father": "^4.4.0",
+    "typescript": "^5.3.3",
+    "umi": "^4.1.1"
+  },
+  "dependencies": {
+    "antd": "^5.13.3",
+    "dayjs": "^1.11.10"
+  }
+}

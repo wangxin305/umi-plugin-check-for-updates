@@ -1,0 +1,6 @@
+/node_modules
+/.idea
+/package/example/dist
+/package/example/node_modules
+/package/plugins/dist
+/package/plugins/node_modules

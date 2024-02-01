@@ -1,0 +1,22 @@
+{
+  "name": "example",
+  "private": true,
+  "author": "wangxin <408995858@qq.com>",
+  "scripts": {
+    "dev": "node_modules/.bin/umi dev",
+    "build": "node_modules/.bin/umi build",
+    "postinstall": "node_modules/.bin/umi setup",
+    "setup": "node_modules/.bin/umi setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "umi": "^4.1.1",
+    "umi-plugin-check-for-updates": "workspace:^"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@umijs/plugins": "^4.1.1",
+    "typescript": "^5.3.3"
+  }
+}
