@@ -25,9 +25,9 @@ export default (api: IApi) => {
                 content:['系统有更新！']
             }
         },
-        enableBy({userConfig}) {
-            return userConfig.checkForUpdates
-            // return api.env === 'production' && !!api?.EnableBy.config;
+        enableBy({userConfig,env}) {
+            // return userConfig.checkForUpdates
+            return env === 'production' && userConfig.checkForUpdates
         },
     })
     api.onGenerateFiles(() => {
@@ -41,10 +41,10 @@ export default (api: IApi) => {
             path: `runtime.tsx`,
         })
     })
-    api.onBuildComplete((e) => {
+    api.onBuildComplete(() => {
         mkdirSync(`${outputPath}/version`);
         const v = {
-            version: api.userConfig.checkForUpdates.version,
+            version: api.userConfig.checkForUpdates.version || api.plugin.config.default.version,
             content: api.userConfig.checkForUpdates.content,
         };
         writeFileSync(`${outputPath}/version/version.json`, JSON.stringify(v));
