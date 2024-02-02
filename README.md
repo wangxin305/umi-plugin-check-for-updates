@@ -1,16 +1,6 @@
 
 
 # umi-plugin-check-for-updates
-<p align="center">
-    <a href="https://www.npmjs.com/package/umi-plugin-check-for-updates" target="__blank">
-      <img src="https://img.shields.io/npm/v/umi-plugin-check-for-updates.svg?style=flat-square&colorB=51C838" alt="NPM Version" />
-    </a>
-    <a href="https://www.npmjs.com/package/umi-plugin-check-for-updates" target="__blank"><img alt="NPM Downloads" src="https://img.shields.io/npm/dm/@plugin-web-update-notification/core?color=50a36f&label="></a>
-    <a href="https://github.com/GreatAuk/plugin-web-update-notification/discussions" target="__blank">
-      <img src="https://img.shields.io/badge/discussions-on%20github-blue?style=flat-square&colorB=51C838" alt="discussions-image" />
-    </a>
-    <br>
-</p>
 
 **检测更新(fetch version.json)**  ?
 
