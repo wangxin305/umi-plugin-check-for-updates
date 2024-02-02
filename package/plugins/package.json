@@ -1,7 +1,7 @@
 {
   "name": "umi-plugin-check-for-updates",
   "author": "wangxin <408995858@qq.com>",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.ts",
   "scripts": {
@@ -29,5 +29,9 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wangxin305/umi-plugin-check-for-updates.git"
   }
 }
