@@ -15,19 +15,20 @@ export default (api: IApi) => {
                     content: Joi.array(),
                     version: Joi.number(),
                     force: Joi.boolean(),
-                    poll: Joi.number()
+                    poll: Joi.number(),
+                    image: Joi.string(),
                 });
             },
             default: {
                 version: Date.now(),
                 force: true,
                 poll: 1000 * 10 * 60,
-                content:['系统有更新！']
+                content: ['系统有更新！']
             }
         },
-        enableBy({userConfig,env}) {
+        enableBy({userConfig, env}) {
             // return userConfig.checkForUpdates
-            
+
             return env === 'production' && userConfig.checkForUpdates
         },
     })
@@ -42,11 +43,14 @@ export default (api: IApi) => {
             path: `runtime.tsx`,
         })
     })
+    // console.log(api.userConfig.checkForUpdates.version || api.plugin.config.default.version)
     api.onBuildComplete(() => {
         mkdirSync(`${outputPath}/version`);
         const v = {
-            version: api.userConfig.checkForUpdates.version || api.plugin.config.default.version,
+            image: api.userConfig.checkForUpdates?.image,
             content: api.userConfig.checkForUpdates.content,
+            version: api.userConfig.checkForUpdates.version || api.plugin.config.default.version,
+
         };
         writeFileSync(`${outputPath}/version/version.json`, JSON.stringify(v));
     });

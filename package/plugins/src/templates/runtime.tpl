@@ -18,7 +18,7 @@ export async function checkUpdate() {
             return response.json();
         })
         .then((data) => {
-            const {version, content} = data;
+            const {version, content,image} = data;
             if (!!poll) {
                 if (sys_version !== version && force) {
                     Modal.destroyAll();
@@ -26,6 +26,7 @@ export async function checkUpdate() {
                         title: '版本更新提示',
                         content: (
                             <div className={'version'}>
+                                {image && <img  src={image} width='100%'/>}
                                 <ol>
                                     {content.map((c: string, i: number) => {
                                         return <li key={i}>{c}</li>;
