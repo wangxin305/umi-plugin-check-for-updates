@@ -20,8 +20,3 @@ npm add umi-plugin-check-for-updates -D
 ```
 
 
-
-
-## License
-
-[MIT](./LICENSE)
